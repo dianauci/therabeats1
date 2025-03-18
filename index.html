@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheraBeats</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".fade-section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            document.querySelectorAll(".download-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    alert("Download button clicked!");
+                });
+            });
+        });
+    </script>
+    <style>
+        h1{
+            font-family: Arial, sans-serif;
+            font-size: 4rem;
+            margin: 0;
+            color: white;
+
+        }
+
+        h2 {
+            font-family: Arial, sans-serif;
+            font-size: 1.3rem;
+            margin: 10px 0 0;
+            color: white;
+        }
+        header {
+            font-family: Arial, sans-serif;
+            position: relative;
+            width: 100%;
+            min-height: 60vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 50px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        header img {
+            position: absolute;
+            top: 50%;  
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transform: translate(-50%, -50%);  
+            object-position: bottom;
+            z-index: -1;
+        }
+        body {
+            background-color: #f7f1e3;
+            font-family: Arial, sans-serif;
+            color: #5a4d41;
+        }
+        a {
+            color: #5a4d41;  
+            text-decoration: none;  
+        }
+        a:hover {
+            color: #d3a984;  
+            text-decoration: underline;  
+        }
+
+        .about-container {
+            display: flex;
+            align-items: stretch;  
+            justify-content: space-between;  
+            gap: 20px;  
+            max-width: 900px;  
+            margin: 40px auto;  
+        }
+
+        .about-text {
+            flex: 1;  
+            text-align: left;
+            background: #fff;  
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;  
+            padding-top: 60px;
+            
+        }
+
+        .about-img {
+            width: 30%;
+            border-radius: 10px;
+            flex-shrink: 0;  
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a4d41;
+            background: linear-gradient(45deg, #e0c3a3, #d3a984);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            text-align: center;
+        }
+
+        .download-button:hover {
+            background: linear-gradient(45deg, #d3a984, #e0c3a3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TheraBeats</h1>
+        <h2>Personalized music therapy powered by biofeedback to help you manage stress</h2>
+        <img src="Home Background.png">
+    </header>
+    <nav class="menu">
+        <a href="home.html">Home</a>
+        <a href="meettheteam.html">Meet the Team</a>
+        <a href="research.html">Research</a>
+        <a href="features.html">Features</a>
+    </nav>
+    
+    <div class="container">
+        <section id="problem" class="section fade-section">
+            <h3>The Problem: Stress Among College Students</h3>
+            <p>College life can be overwhelming, with academic pressure, social demands, and career anxieties contributing to high levels of stress. Unfortunately, chronic stress can negatively impact both mental and physical health, leading to burnout, anxiety, and decreased productivity. Many students struggle to find effective, personalized tools to manage their stress. That's where <strong>TheraBeats</strong> comes in, offering a solution tailored specifically to help students cope with these challenges in real-time.</p>
+        </section>
+        <div class="about-container">
+            <section id="about-app" class="about-text section fade-section">
+                <h3>About Our App</h3>
+                <p><strong>TheraBeats</strong> is a smart music therapy app designed to help college students manage stress through personalized music recommendations. By integrating with fitness trackers, <strong>TheraBeats</strong> detects stress in real time using biofeedback data like heart rate variability and then suggests calming music tailored to the user’s preferences. The app also provides insightful stress analytics, helping students track patterns and develop healthier coping strategies.</p>
+                <br>
+                <br>
+                <button class="download-button download-btn">Download TheraBeats</button>
+            </section>
+            <img src="Welcome Page.png" class="about-img">
+        </div>
+
+        <section id="how-it-works" class="section fade-section">
+            <h3>How It Works</h3>
+            <p><strong>TheraBeats</strong> seamlessly integrates with fitness trackers like the Apple Watch to monitor real-time physiological indicators such as heart rate variability. When the app detects rising stress levels through changes in heart rate variability, it automatically suggests calming music or soundscapes tailored to the user's preferences. These personalized audio tracks are designed to help lower stress and promote relaxation, offering an intuitive way for users to manage their stress levels effectively.</p>
+            <p>To learn more about the science behind biofeedback and music therapy, visit our <a href="research.html">Research Page</a>.</p>
+        </section>
+
+        <img src="TheraBeats Example.png" style="width:100%; border-radius: 10px; margin: 20px 0;">
+
+        <section id="key-benefits" class="section fade-section">
+            <h3>Key Benefits</h3>
+            <p>Unlike traditional stress-tracking apps, <strong>TheraBeats</strong> takes a proactive approach by providing real-time intervention rather than just tracking symptoms. Key benefits include:</p>
+            <ul>
+                <li><strong>Real-time stress management:</strong> Automatically detects stress and provides immediate intervention through personalized music therapy.</li>
+                <li><strong>Personalized solutions:</strong> Unlike generic playlists, <strong>TheraBeats</strong> tailors music recommendations based on user preferences and biofeedback.</li>
+                <li><strong>Designed for college students:</strong> Addresses stressors unique to students, such as academic pressure, career anxiety, and social balance.</li>
+                <li><strong>Data-driven insights:</strong> Tracks stress patterns over time to help users develop healthier coping strategies.</li>
+            </ul>
+            <p>Explore all the features <strong>TheraBeats</strong> has to offer on our <a href="features.html">Features Page</a>.</p>
+        </section>
+    </div>
+    
+    <button id="download-btn" class="download-button download-btn">Download TheraBeats</button>
+</body>
+</html>

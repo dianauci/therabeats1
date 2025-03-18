@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheraBeats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".fade-section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            document.querySelectorAll(".download-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    alert("Download button clicked!");
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".first-row, .second-row, .third-row, .fourth-row");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+    
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel img');
+            const totalImages = images.length;
+
+            function updateCarousel() {
+                images.forEach((img, index) => {
+                    img.style.display = (index === currentIndex) ? 'block' : 'none';
+                });
+            }
+
+            document.getElementById('prev').addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+                updateCarousel();
+            });
+
+            document.getElementById('next').addEventListener('click', () => {
+                currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            });
+
+            updateCarousel(); 
+        });
+    </script>
+    <style>
+        body {
+            background-color: #f7f1e3;
+            font-family: Arial, sans-serif;
+            color: #5a4d41;
+            text-align: center;
+        }
+
+        a {
+            color: #5a4d41;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #d3a984;
+            text-decoration: underline;
+        }
+        header img {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 100%;
+            height: 190%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            object-position: bottom;
+            z-index: -1;
+        }
+        #about-fitness-tracker {
+            padding: 10px; 
+            font-size: 1.2rem;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            max-width: 100%;  
+        }
+        .carousel {
+            position: relative;
+            max-width: 300px;
+            height: 300px; 
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            display: none;
+            border-radius: 10px;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 5px;
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .download-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a4d41;
+            background: linear-gradient(45deg, #e0c3a3, #d3a984);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            text-align: center;
+        }
+
+        .download-button:hover {
+            background: linear-gradient(45deg, #d3a984, #e0c3a3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Features</h1>
+    <h2>Personalized music therapy powered by biofeedback to help you manage stress</h2>
+    <img src="features.png">
+    <button class="download-button download-btn">Download TheraBeats</button>
+
+</header>
+
+<nav class="menu">
+    <a href="home.html">Home</a>
+    <a href="meettheteam.html">Meet the Team</a>
+    <a href="research.html">Research</a>
+    <a href="features.html">Features</a>
+</nav>
+
+<div class="first-row">
+    <div class="image-description">
+        <img src="Search.png">
+        <div class="content-text">
+            <h3>Listen and Personalize</h3>
+            <ul>
+                <li>Listen to your custom playlists with songs you enjoy when feeling stressed.</li>
+                <li>Get recommendations for scientifically proven soundscapes to reduce stress.</li>
+                <li>Explore pre-made playlists tailored to common college stressors like academic pressure and career anxiety.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="image-description">
+        <img src="Play Song.png">
+        <div class="content-text">
+            <h3>Customizable Listening Experience</h3>
+            <ul>
+                <li>Play music from your streaming services or choose scientifically proven soundscapes for stress relief.</li>
+                <li>Save your favorite songs and soundscapes for easy access later.</li>
+                <li>Receive more personalized recommendations based on your favorites.</li>   
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="second-row">
+    <div class="image-description">
+        <img src="Share Song.png">
+        <div class="content-text">
+            <h3>Connect and Share</h3>
+            <ul>
+                <li>Share songs with friends and send messages directly in <strong>TheraBeats</strong>.</li>
+                <li>Recommend songs to friends and chat about your experiences.</li>
+                <li>Strengthen connections while discovering new music together.</li>   
+            </ul>
+        </div>
+    </div>
+    <div class="image-description">
+        <img src="Real-Time Stress Feedback.png">
+        <div class="content-text">
+            <h3>Real-Time Stress Feedback</h3>
+            <ul>
+                <li>See how your heart rate and stress levels change while listening to a song.</li>
+                <li>Track how different songs affect your stress in real time.</li>
+                <li>Gain insights to discover which music helps you relax the most.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="third-row">
+    <div class="image-description">
+        <img src="Analytics.png">
+        <div class="content-text">
+            <h3>Track Your Progress</h3>
+            <ul>
+                <li>View a graph of your stress levels on a weekly or monthly basis.</li>
+                <li>Track key biofeedback metrics like body temperature, heart rate, and skin conductance.</li>
+                <li>Monitor your sleep patterns and see trends over time.</li>   
+                <li>Gain valuable insights into your well-being and stress patterns.</li>   
+            </ul>
+        </div>
+    </div>
+    <div class="image-description">
+        <img src="User Profile.png">
+        <div class="content-text">
+            <h3>Personalize Your Profile</h3>
+            <ul>
+                <li>Choose how to receive song recommendations: push notification, vibration alert, or both.</li>
+                <li>Set notification frequency: automatic (when stress is detected) or customized (e.g., daily, at night).</li>
+                <li>Connect your preferred music streaming service.</li>
+                <li>Create and manage your playlists directly from your profile.</li>
+        </div>
+    </div>
+</div>
+
+<div class="fourth-row">
+    <div class="image-description">
+        <img src="Lock Screen.png">
+        <div class="content-text">
+            <h3>Real-Time Stress Alerts</h3>
+            <ul>
+                <li>Get push notifications when <strong>TheraBeats</strong> detects stress.</li>
+                <li>The notification will ask if you'd like to play calming music.</li>
+                <li>Quickly reduce stress with your favorite songs or recommended soundscapes.</li>   
+                <li>Stay in control with real-time support.</li>   
+            </ul>
+        </div>
+    </div>
+    <div class="image-description">
+        <img src="Apple Watch.png">
+        <div class="content-text">
+            <h3>Integrating with a Fitness Tracker</h3>
+            <ul>
+                <li>Get notified with a vibration when stress is detected, and choose to play suggested music.</li>
+                <li>View your current stress level and track your stress patterns.</li>
+                <li>Listen to music while monitoring your current heart rate in real time.</li>   
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheraBeats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".fade-section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            document.querySelectorAll(".download-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    alert("Download button clicked!");
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-color: #f7f1e3;
+            font-family: Arial, sans-serif;
+            color: #5a4d41;
+            text-align: center;
+        }
+        a {
+            color: #5a4d41;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #d3a984;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #8b6f50;
+        }
+        .download-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a4d41;
+            background: linear-gradient(45deg, #e0c3a3, #d3a984);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            text-align: center;
+        }
+        .download-button:hover {
+            background: linear-gradient(45deg, #d3a984, #e0c3a3);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .download-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Research</h1>
+        <h2>Exploring Biofeedback and Music Therapy for Stress Management</h2>
+        <img src="Research Background.png">
+    </header>
+    <nav class="menu">
+        <a href="home.html">Home</a>
+        <a href="meettheteam.html">Meet the Team</a>
+        <a href="research.html">Research</a>
+        <a href="features.html">Features</a>
+    </nav>
+
+    <div class="container">
+        <section id="music-as-medicine" class="section">
+            <h3>Music as Medicine</h3>
+            <p>Music therapy is rooted in the physiological effects of sound on the human brain. Research has demonstrated that music influences regions of the brain associated with emotion regulation, cognitive processing, and stress response. By integrating biofeedback technology, music therapy can be personalized to address each individual’s unique stress response, ensuring effective, real-time management of stress.</p>
+            <p>Biofeedback works by providing individuals with real-time data on their physiological states, such as heart rate, skin conductance, or brainwave activity. This feedback loop enables users to actively manage their stress through auditory stimuli, optimizing their emotional state and well-being. When combined with music therapy, biofeedback becomes a powerful tool for both immediate stress relief and long-term emotional health management.</p>
+        </section>
+        
+        <section id="why-real-time-solutions" class="section">
+            <h3>The Science of Real-Time Biofeedback Solutions</h3>
+            <p>Biofeedback solutions, particularly in the form of wearable devices such as fitness trackers or smartwatches, offer real-time monitoring of stress-related physiological signals, such as heart rate variability (HRV) and skin conductance. These metrics are crucial for understanding how the body responds to stress and can guide personalized interventions.</p>
+            <p>Real-time solutions, like those offered by fitness trackers, continuously monitor changes in these physiological signals and provide users with feedback that allows them to actively regulate their stress responses. By combining this technology with music therapy, individuals can receive personalized music interventions that respond to their body's stress levels, thus facilitating immediate relaxation and restoring balance to the autonomic nervous system.</p>
+        </section>
+
+        <section id="research-support" class="section">
+            <h3>Research Supporting Biofeedback and Music Therapy</h3>
+            <p>Numerous studies have supported the effectiveness of biofeedback-based stress management techniques. In particular, research into heart rate variability (HRV) biofeedback has demonstrated that improving HRV can help individuals better regulate their emotions, reduce stress, and lower anxiety levels.</p>
+            <p>Fitness trackers that monitor HRV provide real-time feedback, which can help individuals become more aware of their stress responses and develop greater emotional resilience. When combined with music therapy, these trackers allow for dynamic, personalized interventions that adapt to changes in physiological state, making stress management more effective.</p>
+            <p>Music has been shown to have powerful effects on the brain, particularly in modulating brainwave activity. For instance, soothing music can activate the parasympathetic nervous system, promoting relaxation, reducing heart rate, and lowering cortisol levels, a hormone released during times of stress. By pairing music therapy with biofeedback through fitness trackers, users can experience a more profound and immediate calming effect, tailored to their unique physiological responses.</p>
+            <p><a href="https://www.mdpi.com/1424-8220/23/17/7314" target="_blank">Read more about HRV monitoring for stress management.</a></p>
+        </section>
+        
+        <section id="future-of-wearables" class="section">
+            <h3>Innovations in Wearable Stress Management</h3>
+            <p>The future of wearable stress management technology lies in the continuous advancement of sensors that monitor a variety of physiological signals. Smartwatches and fitness trackers that track HRV and skin conductance are already laying the groundwork, but future innovations may include more sophisticated devices that measure cortisol or brainwave activity in real-time.</p>
+            <p>Incorporating more data types into these wearable devices, combined with music therapy, can provide even more accurate and responsive stress management. For example, smart wearables might soon integrate EEG sensors to monitor brainwave activity, providing further insights into a user's stress response. The combination of real-time biofeedback and music therapy could make managing stress more intuitive and effective, creating a seamless experience that helps individuals reduce stress during high-pressure situations.</p>
+            <p><a href="https://www.mdpi.com/2227-9032/11/17/2369" target="_blank">Read more about smart garments and stress management.</a></p>
+        </section>
+
+        <section id="challenges-and-opportunities" class="section">
+            <h3>Challenges and Future Opportunities in Biofeedback and Music Therapy</h3>
+            <p>While the combination of biofeedback and music therapy shows great promise, there are still challenges to overcome. The accuracy of the sensors in fitness trackers and other wearable devices is crucial for providing meaningful real-time feedback. Additionally, developing algorithms that can interpret complex physiological data and translate it into appropriate music interventions requires advanced data processing capabilities.</p>
+            <p>However, these challenges also present significant opportunities for innovation. The more accurate and personalized the biofeedback, the more effective music therapy can be in mitigating stress. By improving sensor technology and enhancing the integration of music therapy with real-time biofeedback, we can create powerful tools that help individuals manage stress more effectively, especially in high-stress environments such as academic settings or workplaces.</p>
+        </section>
+    </div>
+
+    <button class="download-button download-btn">Download TheraBeats</button>
+</body>
+</html>
